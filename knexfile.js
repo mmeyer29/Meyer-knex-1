@@ -4,8 +4,7 @@ module.exports = {
 
   development: {
     client: 'pg',
-    connection: "postgres:///nyresolutions"}
-  }
+    connection: "postgres:///nyresolutions"},
 
 //   staging: {
 //     client: 'postgresql',
@@ -23,13 +22,11 @@ module.exports = {
 //     }
 //   },
 //
-//   production: {
-//     client: 'postgresql',
-//     connection: {
-//       database: 'my_db',
-//       user:     'username',
-//       password: 'password'
-//     },
+  production: {
+    client: 'postgresql',
+    connection: process.env.DATABASE_URL + "?ssl=true"
+  }
+};
 //     pool: {
 //       min: 2,
 //       max: 10
